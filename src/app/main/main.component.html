@@ -1,0 +1,4 @@
+<button (click)="showForm = true">Add Gun</button>
+<ng-container *ngIf="showForm">
+    <app-gun-form></app-gun-form>
+</ng-container>
