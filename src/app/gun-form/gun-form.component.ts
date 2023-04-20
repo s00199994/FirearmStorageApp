@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AwsService } from '../services/aws.service';
 import { Gun } from '../interface/gun'
+import { v4 as uuidv4} from 'uuid';
 
 @Component({
   selector: 'app-gun-form',
@@ -10,12 +11,12 @@ import { Gun } from '../interface/gun'
 
 export class GunFormComponent {
 
-  gun: Gun = {id: '', make: '', serialNumber: '', type: '', logNumber: 0}
+  gun: Gun = {id: '', make: '', serialNumber: '', type: '', logNumber: ''}
   constructor(private AwsService: AwsService) {}
 
   onSubmit() {
     const data = {
-      id: this.gun.id,
+      id: uuidv4(),
       make: this.gun.make,
       serialNumber: this.gun.serialNumber,
       type: this.gun.type,

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Gun } from '../interface/gun';
 
@@ -15,10 +15,14 @@ export class AwsService {
 
   addData(gun: Gun): Observable<any> {
 
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*')
+
     // ADD CORS AND FIX CORS ERRORS FROM API GATEWAY
     
     //const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-    return this.http.post<any>(this.postEndpoint, gun);
+    return this.http.post<any>(this.postEndpoint, gun, { headers });
   }
 }

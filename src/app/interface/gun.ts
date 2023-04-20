@@ -3,5 +3,5 @@ export interface Gun {
     make: string,
     serialNumber: string,
     type: string,
-    logNumber: number
+    logNumber: string
 }

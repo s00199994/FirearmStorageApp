@@ -2,10 +2,6 @@
     <h2>Add Data</h2>
     <form (ngSubmit)="onSubmit()">
       <div>
-        <label for="id">Id:</label>
-        <input type="text" name="id" [(ngModel)]="gun.id" id="id" required>
-      </div>
-      <div>
         <label for="make">Make:</label>
         <input type="text" name="make" [(ngModel)]="gun.make" id="make">
       </div>
@@ -19,7 +15,7 @@
       </div>
       <div>
         <label for="logNumber">Log Number:</label>
-        <input type="number" name="logNumber" [(ngModel)]="gun.logNumber" id="logNumber">
+        <input type="text" name="logNumber" [(ngModel)]="gun.logNumber" id="logNumber">
       </div>
       <button type="submit">Add Data</button>
     </form>
