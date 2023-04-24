@@ -14,7 +14,7 @@ export class GunFormComponent {
   gun: Gun = {id: '', make: '', serialNumber: '', type: '', logNumber: ''}
   constructor(private AwsService: AwsService) {}
 
-  onSubmit() {
+  addLocker_1() {
     const data = {
       id: uuidv4(),
       make: this.gun.make,
@@ -23,7 +23,21 @@ export class GunFormComponent {
       logNumber: this.gun.logNumber
     };
 
-    this.AwsService.addData(data).subscribe(response => {
+    this.AwsService.addLocker1(data).subscribe(response => {
+      console.log(response);
+    })
+  }
+
+  addLocker_2() {
+    const data = {
+      id: uuidv4(),
+      make: this.gun.make,
+      serialNumber: this.gun.serialNumber,
+      type: this.gun.type,
+      logNumber: this.gun.logNumber
+    };
+
+    this.AwsService.addLocker2(data).subscribe(response => {
       console.log(response);
     })
   }

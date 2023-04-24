@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { GunFormComponent } from './gun-form/gun-form.component';
 import { AwsService } from './services/aws.service';
+import { GunCardComponent } from './gun-card/gun-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    GunFormComponent
+    GunFormComponent,
+    GunCardComponent
   ],
   imports: [
     BrowserModule,

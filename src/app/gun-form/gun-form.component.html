@@ -1,22 +1,23 @@
-<div>
-    <h2>Add Data</h2>
-    <form (ngSubmit)="onSubmit()">
-      <div>
+<div class="addForm">
+    <h2>Add Gun</h2>
+    <form>
+      <div class="form_content">
         <label for="make">Make:</label>
         <input type="text" name="make" [(ngModel)]="gun.make" id="make">
       </div>
-      <div>
+      <div class="form_content">
         <label for="serialNumber">Serial Number:</label>
         <input type="text" name="serialNumber" [(ngModel)]="gun.serialNumber" id="serialNumber">
       </div>
-      <div>
+      <div class="form_content">
         <label for="type">Type:</label>
         <input type="text" name="type" [(ngModel)]="gun.type" id="type">
       </div>
-      <div>
+      <div class="form_content">
         <label for="logNumber">Log Number:</label>
         <input type="text" name="logNumber" [(ngModel)]="gun.logNumber" id="logNumber">
       </div>
-      <button type="submit">Add Data</button>
+      <button type="button" class="form_buttons" (click)="addLocker_1()">Add to Locker 1</button>
+      <button type="button" class="form_buttons" (click)="addLocker_2()">Add to Locker 2</button>
     </form>
   </div>
