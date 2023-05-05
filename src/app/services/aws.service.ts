@@ -61,7 +61,7 @@ export class AwsService {
       .set('Access-Control-Allow-Origin', '*')
 
     return this.http
-      .get<any[]>(this.locker_1_Endpoint + '/get', { headers })
+      .get<any[]>(this.locker_2_Endpoint + '/get', { headers })
       .pipe(
         map((data) =>
         data.map((item) => ({
@@ -74,4 +74,16 @@ export class AwsService {
         ))
       );
   }
+
+  deleteLocker1(gun: Gun): Observable<any> {
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*')
+
+    const params = { id: gun.id, logNumber: gun.logNumber};
+
+    const deleteURL = `${this.locker_1_Endpoint}/delete`
+    console.log("Id: " + gun.id, "Log Number: " + gun.logNumber)
+    return this.http.post(deleteURL, params, { headers })
+  } 
 }

@@ -10,7 +10,7 @@ import { AwsService } from '../services/aws.service';
 export class MainComponent implements OnInit {
 
   showForm: boolean = false;
-  isLoggedIn: boolean = false;
+  // isLoggedIn: boolean = false;
 
   Locker_1_guns: Gun[] = [];
   Locker_2_guns: Gun[] = [];

@@ -26,6 +26,8 @@ export class GunFormComponent {
     this.AwsService.addLocker1(data).subscribe(response => {
       console.log(response);
     })
+
+    window.location.reload();
   }
 
   addLocker_2() {
@@ -40,5 +42,7 @@ export class GunFormComponent {
     this.AwsService.addLocker2(data).subscribe(response => {
       console.log(response);
     })
+
+    window.location.reload();
   }
 }
